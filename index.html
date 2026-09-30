@@ -16,169 +16,114 @@
             background-color: #0d1117;
             color: #e6edf3;
             line-height: 1.6;
+            padding: 20px;
         }
 
         header {
-            background: linear-gradient(135deg, #1f2937, #111827);
-            padding: 2rem 1rem;
             text-align: center;
-            border-bottom: 3px solid #10b981;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1f6beb, #0969da);
+            border-radius: 12px;
+            margin-bottom: 30px;
         }
 
         header h1 {
             font-size: 2.5rem;
-            color: #10b981;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
 
         header p {
-            color: #9ca3af;
-            font-size: 1.1rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            background: #161b22;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #e6edf3;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #10b981;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem;
-            background: url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(13, 17, 23, 0.85);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #10b981;
-            color: #0d1117;
-            padding: 0.8rem 1.8rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #059669;
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 1rem;
         }
 
-        .services-grid {
+        .gallery-title {
+            text-align: center;
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+            color: #58a6ff;
+        }
+
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: #161b22;
+            background-color: #161b22;
             border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: #10b981;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        .card h3 {
-            color: #10b981;
-            margin-bottom: 0.8rem;
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            background: #161b22;
-            border-top: 1px solid #30363d;
+            margin-top: 50px;
+            padding: 20px;
             color: #8b949e;
+            border-top: 1px solid #30363d;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Carwash Kactus</h1>
-        <p>Servicio profesional de lavado y detallado vehicular</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Carwash Kactus</h1>
+            <p>Servicio Profesional de Lavado y Cuidado Automotriz</p>
+        </header>
 
-    <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+        <h2 class="gallery-title">Nuestros Servicios y Trabajos</h2>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>El mejor cuidado para tu vehículo</h2>
-            <p>Lavado de carrocería, chasis, salón y tratamiento de pintura con los mejores productos.</p>
-            <a href="#contacto" class="btn">Solicitar Información</a>
-        </div>
-    </section>
-
-    <div class="container" id="servicios">
-        <h2 style="text-align: center;">Nuestros Servicios</h2>
-        <div class="services-grid">
+        <div class="gallery">
             <div class="card">
-                <h3>Lavado Básico</h3>
-                <p>Lavado exterior con champú con cera, secado con microfibra y enjuague de llantas.</p>
+                <img src="1.png" alt="Carwash Kactus Image 1">
             </div>
             <div class="card">
-                <h3>Lavado Completo</h3>
-                <p>Lavado exterior e interior, aspirado profundo de salón, maletera y siliconado de plásticos.</p>
+                <img src="2.png" alt="Carwash Kactus Image 2">
             </div>
             <div class="card">
-                <h3>Lavado de Chasis y Motor</h3>
-                <p>Eliminación de grasa y barro acumulado en la parte inferior y motor con desengrasantes especiales.</p>
+                <img src="3.png" alt="Carwash Kactus Image 3">
+            </div>
+            <div class="card">
+                <img src="4.png" alt="Carwash Kactus Image 4">
+            </div>
+            <div class="card">
+                <img src="5.png" alt="Carwash Kactus Image 5">
+            </div>
+            <div class="card">
+                <img src="6.png" alt="Carwash Kactus Image 6">
             </div>
         </div>
+
+        <footer>
+            <p>&copy; 2026 Carwash Kactus. Todos los derechos reservados.</p>
+        </footer>
     </div>
-
-    <footer id="contacto">
-        <p>&copy; 2026 Carwash Kactus - Todos los derechos reservados.</p>
-    </footer>
 
 </body>
 </html>
