@@ -39,7 +39,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 40px 20px 35px;
+            padding: 35px 20px;
             background: linear-gradient(135deg, #0284c7, #0369a1, #0d9488);
             border-radius: 20px;
             margin-bottom: 35px;
@@ -49,7 +49,7 @@
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 900;
             color: #ffffff;
             text-shadow: 0 3px 8px rgba(0,0,0,0.3);
@@ -58,41 +58,50 @@
         }
 
         header p.subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #e0f2fe;
             margin-bottom: 25px;
             font-weight: 500;
         }
 
-        /* Botón Parpadeante de Google Maps Centrado */
-        .map-section {
+        /* Sección de Botones en el Encabezado */
+        .actions-section {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
+            gap: 20px;
             width: 100%;
         }
 
+        .action-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Botón Ubícanos */
         .location-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             background-color: #facc15;
             color: #0f172a;
-            padding: 18px 36px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             border: 3px solid #ffffff;
-            box-shadow: 0 8px 25px rgba(250, 204, 21, 0.6);
+            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.5);
             transition: transform 0.2s ease;
             animation: pulseBlink 1.5s infinite alternate;
             cursor: pointer;
         }
 
         .location-btn img {
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
             object-fit: contain;
         }
 
@@ -103,44 +112,62 @@
         }
 
         .location-text span.title {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             line-height: 1.1;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .location-text span.subtitle {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #334155;
             font-weight: 600;
         }
 
+        /* Botón Contáctanos */
+        .contact-header-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .contact-header-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+        }
+
+        .contact-header-btn:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
         @keyframes pulseBlink {
-            0% {
-                transform: scale(1);
-                background-color: #facc15;
-                box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
-            }
-            50% {
-                background-color: #fde047;
-            }
-            100% {
-                transform: scale(1.06);
-                background-color: #eab308;
-                box-shadow: 0 0 0 18px rgba(250, 204, 21, 0);
-            }
+            0% { transform: scale(1); background-color: #facc15; }
+            50% { background-color: #fde047; }
+            100% { transform: scale(1.05); background-color: #eab308; }
         }
 
         .location-btn:hover {
             animation: none;
-            transform: scale(1.08);
+            transform: scale(1.06);
             background-color: #ffffff;
             color: #0284c7;
         }
 
         .direct-link {
-            margin-top: 12px;
-            font-size: 0.95rem;
+            margin-top: 8px;
+            font-size: 0.85rem;
             color: #f8fafc;
             text-decoration: underline;
             word-break: break-all;
@@ -194,7 +221,6 @@
             box-shadow: 0 15px 30px rgba(2, 132, 199, 0.2);
         }
 
-        /* Ajuste para mostrar imágenes completas sin recorte */
         .card img {
             width: 100%;
             height: auto;
@@ -205,47 +231,7 @@
             padding: 5px;
         }
 
-        /* Card de Reserva de WhatsApp en la Galería */
-        .card-booking {
-            background: linear-gradient(135deg, #16a34a, #15803d);
-            color: #ffffff;
-            padding: 30px 20px;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            border: 2px solid #22c55e;
-        }
-
-        .card-booking:hover {
-            border-color: #ffffff;
-            box-shadow: 0 15px 30px rgba(22, 163, 74, 0.4);
-        }
-
-        .card-booking h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .card-booking p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-
-        .btn-reserve-internal {
-            background-color: #ffffff;
-            color: #15803d;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 800;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-        }
-
-        /* Modal / Visualizador de imagen completa */
+        /* Modal / Visualizador */
         .modal {
             display: none;
             position: fixed;
@@ -335,7 +321,7 @@
             font-weight: 600;
         }
 
-        /* Animación de Burbujas */
+        /* Burbujas Flotantes */
         .bubbles-container {
             position: fixed;
             top: 0;
@@ -349,40 +335,44 @@
 
         .bubble {
             position: absolute;
-            bottom: -50px;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(186, 230, 253, 0.4));
+            bottom: -80px;
+            background: radial-gradient(circle at 35% 35%, rgba(187, 247, 208, 0.95), rgba(34, 197, 94, 0.45));
             border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15), inset 0 0 8px rgba(255, 255, 255, 0.6);
-            animation: floatUpGlobal linear infinite;
+            border: 2px solid rgba(74, 222, 128, 0.9);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.9);
+            animation: floatUpRandom linear infinite;
         }
 
-        .bubble:nth-child(1) { left: 5%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 0s; }
-        .bubble:nth-child(2) { left: 18%; width: 45px; height: 45px; animation-duration: 12s; animation-delay: 2s; }
-        .bubble:nth-child(3) { left: 32%; width: 18px; height: 18px; animation-duration: 7s; animation-delay: 1s; }
-        .bubble:nth-child(4) { left: 48%; width: 35px; height: 35px; animation-duration: 10s; animation-delay: 3s; }
-        .bubble:nth-child(5) { left: 62%; width: 50px; height: 50px; animation-duration: 14s; animation-delay: 0.5s; }
-        .bubble:nth-child(6) { left: 75%; width: 22px; height: 22px; animation-duration: 9s; animation-delay: 4s; }
-        .bubble:nth-child(7) { left: 88%; width: 40px; height: 40px; animation-duration: 11s; animation-delay: 1.5s; }
+        .bubble:nth-child(1) { left: 3%; width: 35px; height: 35px; animation-duration: 7s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 14%; width: 55px; height: 55px; animation-duration: 11s; animation-delay: 1.5s; }
+        .bubble:nth-child(3) { left: 26%; width: 28px; height: 28px; animation-duration: 8s; animation-delay: 3s; }
+        .bubble:nth-child(4) { left: 38%; width: 65px; height: 65px; animation-duration: 13s; animation-delay: 0.5s; }
+        .bubble:nth-child(5) { left: 50%; width: 40px; height: 40px; animation-duration: 9s; animation-delay: 2s; }
+        .bubble:nth-child(6) { left: 63%; width: 50px; height: 50px; animation-duration: 10s; animation-delay: 4s; }
+        .bubble:nth-child(7) { left: 75%; width: 30px; height: 30px; animation-duration: 7.5s; animation-delay: 1s; }
+        .bubble:nth-child(8) { left: 86%; width: 60px; height: 60px; animation-duration: 12s; animation-delay: 2.5s; }
+        .bubble:nth-child(9) { left: 94%; width: 35px; height: 35px; animation-duration: 8.5s; animation-delay: 0.2s; }
 
-        @keyframes floatUpGlobal {
-            0% { transform: translateY(0) scale(1) translateX(0); opacity: 0.85; }
-            50% { transform: translateY(-50vh) scale(1.1) translateX(15px); }
-            100% { transform: translateY(-105vh) scale(1.25) translateX(-15px); opacity: 0; }
+        @keyframes floatUpRandom {
+            0% { transform: translateY(0) scale(0.9) translateX(0); opacity: 0.95; }
+            33% { transform: translateY(-35vh) scale(1.1) translateX(30px); }
+            66% { transform: translateY(-70vh) scale(1) translateX(-25px); }
+            100% { transform: translateY(-110vh) scale(1.25) translateX(20px); opacity: 0.1; }
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .location-btn { padding: 15px 24px; width: 90%; }
-            .location-text span.title { font-size: 1.15rem; }
+            header h1 { font-size: 2.3rem; }
+            .actions-section { flex-direction: column; }
             .whatsapp-float { padding: 10px 18px; font-size: 0.95rem; bottom: 15px; right: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fondo de Burbujas de Jabón -->
+    <!-- Fondo de Burbujas Verde Claro -->
     <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -397,17 +387,34 @@
             <h1>Carwash Kactus</h1>
             <p class="subtitle">Servicio Profesional de Lavado y Cuidado Automotriz</p>
 
-            <div class="map-section">
-                <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank" class="location-btn" title="Ver ubicación en Google Maps">
-                    <img src="gps.png" alt="Icono GPS">
-                    <div class="location-text">
-                        <span class="title">¡Ubícanos aquí!</span>
-                        <span class="subtitle">Haz clic para abrir Google Maps</span>
-                    </div>
-                </a>
-                <p class="direct-link">
-                    <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank">https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9</a>
-                </p>
+            <!-- Acciones del Encabezado -->
+            <div class="actions-section">
+                <!-- Botón Ubícanos -->
+                <div class="action-card">
+                    <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank" class="location-btn" title="Ver ubicación en Google Maps">
+                        <img src="gps.png" alt="Icono GPS">
+                        <div class="location-text">
+                            <span class="title">¡Ubícanos aquí!</span>
+                            <span class="subtitle">Abrir en Google Maps</span>
+                        </div>
+                    </a>
+                    <p class="direct-link">
+                        <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank">https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9</a>
+                    </p>
+                </div>
+
+                <!-- Botón Contáctanos -->
+                <div class="action-card">
+                    <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="contact-header-btn" title="Contáctanos por WhatsApp">
+                        <svg viewBox="0 0 32 32">
+                            <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 8.9 8.9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6a.5.5 0 0 0 0-.5c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.8 6.4 6.4 0 0 0 1.3 3.4 14.5 14.5 0 0 0 5.6 5 18.7 18.7 0 0 0 1.9.7 4.5 4.5 0 0 0 2.1.1 3.4 3.4 0 0 0 2.2-1.5 2.8 2.8 0 0 0 .2-1.6c-.1-.3-.4-.4-.7-.6z"/>
+                        </svg>
+                        <div class="location-text">
+                            <span class="title">Contáctanos</span>
+                            <span class="subtitle">Escríbenos por WhatsApp</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </header>
 
@@ -420,13 +427,6 @@
             <div class="card" onclick="openModal('4.png')"><img src="4.png" alt="Servicio 4"></div>
             <div class="card" onclick="openModal('5.png')"><img src="5.png" alt="Servicio 5"></div>
             <div class="card" onclick="openModal('6.png')"><img src="6.png" alt="Servicio 6"></div>
-
-            <!-- Card Especial para Reserva directa vía WhatsApp -->
-            <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20reservar%20un%20servicio%20de%20lavado" target="_blank" class="card card-booking">
-                <h3>¡Reserva tu Turno!</h3>
-                <p>Haz clic aquí para comunicarte directamente por WhatsApp y agendar tu atención.</p>
-                <div class="btn-reserve-internal">Agendar por WhatsApp</div>
-            </a>
         </div>
 
         <footer>
@@ -440,7 +440,7 @@
         <img class="modal-content" id="imgFull">
     </div>
 
-    <!-- Botón Flotante de WhatsApp Contáctanos -->
+    <!-- Botón Flotante de WhatsApp -->
     <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
         <svg viewBox="0 0 32 32">
             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 8.9 8.9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6a.5.5 0 0 0 0-.5c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.8 6.4 6.4 0 0 0 1.3 3.4 14.5 14.5 0 0 0 5.6 5 18.7 18.7 0 0 0 1.9.7 4.5 4.5 0 0 0 2.1.1 3.4 3.4 0 0 0 2.2-1.5 2.8 2.8 0 0 0 .2-1.6c-.1-.3-.4-.4-.7-.6z"/>
@@ -448,7 +448,6 @@
         <span>Contáctanos</span>
     </a>
 
-    <!-- JavaScript para el funcionamiento del modal de imágenes -->
     <script>
         function openModal(imageSrc) {
             var modal = document.getElementById("imageModal");
