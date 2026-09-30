@@ -42,7 +42,7 @@
             padding: 35px 20px;
             background: linear-gradient(135deg, #0284c7, #0369a1, #0d9488);
             border-radius: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             box-shadow: 0 12px 30px rgba(2, 132, 199, 0.25);
             border: 2px solid #38bdf8;
             color: #ffffff;
@@ -64,7 +64,7 @@
             font-weight: 500;
         }
 
-        /* Sección de Botones en el Encabezado */
+        /* Secciones del Encabezado */
         .actions-section {
             display: flex;
             flex-wrap: wrap;
@@ -184,7 +184,126 @@
             color: #facc15;
         }
 
-        /* Galería */
+        /* Sección de Información & Servicios Pro */
+        .info-banner {
+            background-color: #ffffff;
+            border: 2px solid #bae6fd;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.08);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border-left: 5px solid #0284c7;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .info-box h3 {
+            color: #0369a1;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box p {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        /* Sección Especial: Bebidas y Refrescos en la Sala de Espera */
+        .refreshment-section {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+            border: 2px solid #38bdf8;
+        }
+
+        .refreshment-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .refreshment-subtitle {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .drink-card {
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .drink-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+
+        .drink-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background-color: #ffffff;
+        }
+
+        .drink-card-body {
+            padding: 15px;
+        }
+
+        .drink-card-body h4 {
+            font-size: 1.15rem;
+            color: #f8fafc;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .drink-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #ef4444;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Galería Principal sin marcos blancos */
         .gallery-title {
             text-align: center;
             margin: 35px 0 25px;
@@ -197,41 +316,36 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .card {
             background-color: #ffffff;
             border: 2px solid #bae6fd;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            aspect-ratio: 4 / 5;
+            width: 100%;
         }
 
         .card:hover {
             transform: translateY(-8px);
             border-color: #0284c7;
-            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.25);
         }
 
         .card img {
             width: 100%;
-            height: auto;
-            max-height: 320px;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            background-color: #f8fafc;
-            padding: 5px;
         }
 
-        /* Modal / Visualizador */
+        /* Modal / Visualizador HD */
         .modal {
             display: none;
             position: fixed;
@@ -248,8 +362,8 @@
         }
 
         .modal-content {
-            max-width: 90%;
-            max-height: 85vh;
+            max-width: 92%;
+            max-height: 88vh;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
             object-fit: contain;
@@ -276,6 +390,48 @@
 
         .close-btn:hover {
             background: #ef4444;
+        }
+
+        /* Call To Action Inferior */
+        .cta-bottom {
+            background: linear-gradient(135deg, #15803d, #16a34a);
+            color: #ffffff;
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 20px;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .cta-bottom h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .cta-bottom p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #facc15;
+            color: #0f172a;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background-color: #ffffff;
+            color: #15803d;
         }
 
         /* Botón Flotante de WhatsApp */
@@ -313,7 +469,7 @@
 
         footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             padding: 25px;
             color: #475569;
             border-top: 2px solid #cbd5e1;
@@ -321,7 +477,7 @@
             font-weight: 600;
         }
 
-        /* Burbujas Flotantes */
+        /* Burbujas Flotantes Verde Claro */
         .bubbles-container {
             position: fixed;
             top: 0;
@@ -351,7 +507,6 @@
         .bubble:nth-child(6) { left: 63%; width: 50px; height: 50px; animation-duration: 10s; animation-delay: 4s; }
         .bubble:nth-child(7) { left: 75%; width: 30px; height: 30px; animation-duration: 7.5s; animation-delay: 1s; }
         .bubble:nth-child(8) { left: 86%; width: 60px; height: 60px; animation-duration: 12s; animation-delay: 2.5s; }
-        .bubble:nth-child(9) { left: 94%; width: 35px; height: 35px; animation-duration: 8.5s; animation-delay: 0.2s; }
 
         @keyframes floatUpRandom {
             0% { transform: translateY(0) scale(0.9) translateX(0); opacity: 0.95; }
@@ -364,6 +519,7 @@
             header h1 { font-size: 2.3rem; }
             .actions-section { flex-direction: column; }
             .whatsapp-float { padding: 10px 18px; font-size: 0.95rem; bottom: 15px; right: 15px; }
+            .card { aspect-ratio: auto; height: 380px; }
         }
     </style>
 </head>
@@ -379,7 +535,6 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
-        <div class="bubble"></div>
     </div>
 
     <div class="container">
@@ -387,7 +542,6 @@
             <h1>Carwash Kactus</h1>
             <p class="subtitle">Servicio Profesional de Lavado y Cuidado Automotriz</p>
 
-            <!-- Acciones del Encabezado -->
             <div class="actions-section">
                 <!-- Botón Ubícanos -->
                 <div class="action-card">
@@ -405,7 +559,7 @@
 
                 <!-- Botón Contáctanos -->
                 <div class="action-card">
-                    <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="contact-header-btn" title="Contáctanos por WhatsApp">
+                    <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="contact-header-btn" title="Contáctanos por WhatsApp">
                         <svg viewBox="0 0 32 32">
                             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 8.9 8.9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6a.5.5 0 0 0 0-.5c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.8 6.4 6.4 0 0 0 1.3 3.4 14.5 14.5 0 0 0 5.6 5 18.7 18.7 0 0 0 1.9.7 4.5 4.5 0 0 0 2.1.1 3.4 3.4 0 0 0 2.2-1.5 2.8 2.8 0 0 0 .2-1.6c-.1-.3-.4-.4-.7-.6z"/>
                         </svg>
@@ -418,6 +572,54 @@
             </div>
         </header>
 
+        <!-- Sección de Propuesta de Valor -->
+        <div class="info-banner">
+            <div class="info-box">
+                <h3>✨ Cuidado al Detalle</h3>
+                <p>Lavamos su vehículo con el máximo detalle posible: aspirado profundo, siliconado protector y acabados impecables para que luzca como recién salido de tienda.</p>
+            </div>
+            <div class="info-box">
+                <h3>🛋️ Sala de Espera Comfort</h3>
+                <p>Relájese en nuestros cómodos sofás mientras trabajamos. Disfrute de nuestra variedad en bebidas heladas, cervezas, galletas y piqueos.</p>
+            </div>
+            <div class="info-box">
+                <h3>🏢 Atención a Empresas</h3>
+                <p>Atención corporativa a flotas de empresas con precios y descuentos especiales por volumen. Todos nuestros precios ya incluyen IGV.</p>
+            </div>
+        </div>
+
+        <!-- Muestra de Productos y Sala de Espera VIP -->
+        <div class="refreshment-section">
+            <h2 class="refreshment-title">🥤 Bebidas Heladas & Snacks en Tu Espera 🍺</h2>
+            <p class="refreshment-subtitle">Disfruta de la mejor comodidad en nuestra sala de espera acondicionada con sofás mientras cuidamos tu vehículo</p>
+            
+            <div class="drinks-grid">
+                <div class="drink-card" onclick="openModal('bebidas.webp')">
+                    <span class="drink-badge">Bien Heladas</span>
+                    <img src="bebidas.webp" alt="Gaseosas y Bebidas Heladas">
+                    <div class="drink-card-body">
+                        <h4>Gaseosas & Refrescos</h4>
+                    </div>
+                </div>
+
+                <div class="drink-card" onclick="openModal('cerveza.webp')">
+                    <span class="drink-badge">VIP</span>
+                    <img src="cerveza.webp" alt="Cervezas Heladas">
+                    <div class="drink-card-body">
+                        <h4>Cervezas Personales</h4>
+                    </div>
+                </div>
+
+                <div class="drink-card" onclick="openModal('cerveza2.webp')">
+                    <span class="drink-badge">Refrescante</span>
+                    <img src="cerveza2.webp" alt="Variedad de Cervezas y Bebidas">
+                    <div class="drink-card-body">
+                        <h4>Variedad en Licores & Snacks</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h2 class="gallery-title">Nuestros Servicios y Trabajos</h2>
 
         <div class="gallery">
@@ -427,6 +629,13 @@
             <div class="card" onclick="openModal('4.png')"><img src="4.png" alt="Servicio 4"></div>
             <div class="card" onclick="openModal('5.png')"><img src="5.png" alt="Servicio 5"></div>
             <div class="card" onclick="openModal('6.png')"><img src="6.png" alt="Servicio 6"></div>
+        </div>
+
+        <!-- Banner Cierre Comercial -->
+        <div class="cta-bottom">
+            <h2>¡No esperes más y visítanos hoy mismo!</h2>
+            <p>Tu vehículo te lo agradecerá. Garantía de brillo, frescura y limpieza total.</p>
+            <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20quiero%20llevar%20mi%20veh%C3%ADculo%20hoy" target="_blank" class="cta-btn">Escríbenos por WhatsApp</a>
         </div>
 
         <footer>
@@ -441,7 +650,7 @@
     </div>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+    <a href="https://wa.me/51974364826?text=Hola%20Carwash%20Kactus,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
         <svg viewBox="0 0 32 32">
             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 8.9 8.9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.4.3-.6a.5.5 0 0 0 0-.5c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.8 6.4 6.4 0 0 0 1.3 3.4 14.5 14.5 0 0 0 5.6 5 18.7 18.7 0 0 0 1.9.7 4.5 4.5 0 0 0 2.1.1 3.4 3.4 0 0 0 2.2-1.5 2.8 2.8 0 0 0 .2-1.6c-.1-.3-.4-.4-.7-.6z"/>
         </svg>
