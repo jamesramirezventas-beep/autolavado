@@ -6,7 +6,7 @@
     <title>Carwash Kactus - Lavado y Cuidado Automotriz</title>
     
     <!-- Favicon personalizado con la letra K celeste -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d1117'/><text x='50%' y='72%' font-size='70' font-weight='bold' font-family='Arial, sans-serif' fill='%2338bdf8' text-anchor='middle'>K</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50%' y='72%' font-size='70' font-weight='bold' font-family='Arial, sans-serif' fill='%23ffffff' text-anchor='middle'>K</text></svg>">
 
     <style>
         * {
@@ -17,81 +17,82 @@
         }
 
         body {
-            background-color: #0b0f17;
-            color: #e6edf3;
+            background: linear-gradient(180deg, #e0f2fe 0%, #dcfce7 50%, #f0fdf4 100%);
+            color: #0f172a;
             line-height: 1.6;
             padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-        }
-
-        /* Header / Banner con efecto de agua y burbujas */
-        header {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 35px 30px;
-            background: linear-gradient(135deg, #0284c7, #0369a1, #0f766e);
-            border-radius: 16px;
-            margin-bottom: 30px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .header-content {
             position: relative;
             z-index: 2;
-            max-width: 60%;
+        }
+
+        /* Banner Principal Superior */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px 35px;
+            background: linear-gradient(135deg, #0284c7, #0369a1, #0d9488);
+            border-radius: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.25);
+            border: 2px solid #38bdf8;
+            color: #ffffff;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 900;
             color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
         }
 
-        header p {
-            font-size: 1.1rem;
+        header p.subtitle {
+            font-size: 1.3rem;
             color: #e0f2fe;
-            margin-top: 5px;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
-        /* Botón / Cartel de Google Maps */
-        .location-btn {
-            position: relative;
-            z-index: 2;
+        /* Botón Parpadeante de Google Maps Centrado y Grande */
+        .map-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            background: rgba(13, 17, 23, 0.85);
-            padding: 12px 20px;
+            width: 100%;
+        }
+
+        .location-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background-color: #facc15;
+            color: #0f172a;
+            padding: 18px 36px;
             border-radius: 50px;
             text-decoration: none;
-            color: #ffffff;
-            border: 2px solid #38bdf8;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .location-btn:hover {
-            background: #38bdf8;
-            color: #0f172a;
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+            font-weight: 800;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(250, 204, 21, 0.6);
+            transition: transform 0.2s ease;
+            animation: pulseBlink 1.5s infinite alternate;
+            cursor: pointer;
         }
 
         .location-btn img {
-            width: 32px;
-            height: 32px;
+            width: 42px;
+            height: 42px;
             object-fit: contain;
         }
 
@@ -102,142 +103,202 @@
         }
 
         .location-text span.title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 1.4rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .location-text span.subtitle {
-            font-size: 0.75rem;
-            opacity: 0.85;
+            font-size: 0.95rem;
+            color: #334155;
+            font-weight: 600;
         }
 
-        /* Animación de burbujas flotantes */
-        .bubbles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .bubble {
-            position: absolute;
-            bottom: -20px;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            animation: floatUp 8s infinite ease-in;
-        }
-
-        .bubble:nth-child(1) { left: 10%; width: 15px; height: 15px; animation-duration: 6s; animation-delay: 0s; }
-        .bubble:nth-child(2) { left: 25%; width: 25px; height: 25px; animation-duration: 9s; animation-delay: 1s; }
-        .bubble:nth-child(3) { left: 45%; width: 10px; height: 10px; animation-duration: 5s; animation-delay: 2s; }
-        .bubble:nth-child(4) { left: 65%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 0.5s; }
-        .bubble:nth-child(5) { left: 80%; width: 30px; height: 30px; animation-duration: 10s; animation-delay: 1.5s; }
-        .bubble:nth-child(6) { left: 92%; width: 12px; height: 12px; animation-duration: 6s; animation-delay: 3s; }
-
-        @keyframes floatUp {
+        /* Animación Parpadeo / Pulsación */
+        @keyframes pulseBlink {
             0% {
-                transform: translateY(0) scale(1);
-                opacity: 0.8;
+                transform: scale(1);
+                background-color: #facc15;
+                box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+            }
+            50% {
+                background-color: #fde047;
             }
             100% {
-                transform: translateY(-160px) scale(1.3);
-                opacity: 0;
+                transform: scale(1.06);
+                background-color: #eab308;
+                box-shadow: 0 0 0 18px rgba(250, 204, 21, 0);
             }
+        }
+
+        .location-btn:hover {
+            animation: none;
+            transform: scale(1.08);
+            background-color: #ffffff;
+            color: #0284c7;
+        }
+
+        /* Enlace completo debajo del botón */
+        .direct-link {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #f8fafc;
+            text-decoration: underline;
+            word-break: break-all;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        .direct-link a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .direct-link a:hover {
+            color: #facc15;
         }
 
         /* Galería */
         .gallery-title {
             text-align: center;
             margin: 35px 0 25px;
-            font-size: 1.9rem;
-            color: #38bdf8;
-            font-weight: 700;
+            font-size: 2.2rem;
+            color: #0369a1;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
+            background-color: #ffffff;
+            border: 2px solid #bae6fd;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            border-color: #38bdf8;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+            transform: translateY(-8px);
+            border-color: #0284c7;
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.2);
         }
 
         .card img {
             width: 100%;
-            height: 230px;
+            height: 250px;
             object-fit: cover;
             display: block;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #8b949e;
-            border-top: 1px solid #30363d;
-            font-size: 0.9rem;
+            margin-top: 60px;
+            padding: 25px;
+            color: #475569;
+            border-top: 2px solid #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Animación Global de Burbujas de Jabón */
+        .bubbles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(186, 230, 253, 0.4));
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15), inset 0 0 8px rgba(255, 255, 255, 0.6);
+            animation: floatUpGlobal linear infinite;
+        }
+
+        .bubble:nth-child(1) { left: 5%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 18%; width: 45px; height: 45px; animation-duration: 12s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 32%; width: 18px; height: 18px; animation-duration: 7s; animation-delay: 1s; }
+        .bubble:nth-child(4) { left: 48%; width: 35px; height: 35px; animation-duration: 10s; animation-delay: 3s; }
+        .bubble:nth-child(5) { left: 62%; width: 50px; height: 50px; animation-duration: 14s; animation-delay: 0.5s; }
+        .bubble:nth-child(6) { left: 75%; width: 22px; height: 22px; animation-duration: 9s; animation-delay: 4s; }
+        .bubble:nth-child(7) { left: 88%; width: 40px; height: 40px; animation-duration: 11s; animation-delay: 1.5s; }
+        .bubble:nth-child(8) { left: 95%; width: 28px; height: 28px; animation-duration: 8s; animation-delay: 2.5s; }
+
+        @keyframes floatUpGlobal {
+            0% {
+                transform: translateY(0) scale(1) translateX(0);
+                opacity: 0.85;
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.1) translateX(15px);
+            }
+            100% {
+                transform: translateY(-105vh) scale(1.25) translateX(-15px);
+                opacity: 0;
+            }
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-content {
-                max-width: 100%;
+            header h1 {
+                font-size: 2.5rem;
             }
             .location-btn {
-                width: 100%;
-                justify-content: center;
+                padding: 15px 24px;
+                width: 90%;
+            }
+            .location-text span.title {
+                font-size: 1.15rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Fondo Interactivo de Burbujas de Jabón -->
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
     <div class="container">
         <header>
-            <!-- Efecto de burbujas -->
-            <div class="bubbles">
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-            </div>
+            <h1>Carwash Kactus</h1>
+            <p class="subtitle">Servicio Profesional de Lavado y Cuidado Automotriz</p>
 
-            <div class="header-content">
-                <h1>Carwash Kactus</h1>
-                <p>Servicio Profesional de Lavado y Cuidado Automotriz</p>
+            <!-- Sección de Ubicación Centrada -->
+            <div class="map-section">
+                <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank" class="location-btn" title="Ver ubicación en Google Maps">
+                    <img src="gps.png" alt="Icono GPS">
+                    <div class="location-text">
+                        <span class="title">¡Ubícanos aquí!</span>
+                        <span class="subtitle">Haz clic para abrir Google Maps</span>
+                    </div>
+                </a>
+                <p class="direct-link">
+                    <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank">https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9</a>
+                </p>
             </div>
-
-            <!-- Cartel / Botón GPS Google Maps -->
-            <a href="https://maps.app.goo.gl/qSCLzeF1Up7ykjqo9" target="_blank" class="location-btn" title="Ver ubicación en Google Maps">
-                <img src="gps.png" alt="Icono GPS">
-                <div class="location-text">
-                    <span class="title">¡Ubícanos aquí!</span>
-                    <span class="subtitle">Abrir en Google Maps</span>
-                </div>
-            </a>
         </header>
 
         <h2 class="gallery-title">Nuestros Servicios y Trabajos</h2>
